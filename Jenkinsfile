@@ -6,6 +6,14 @@ pipeline {
     }
 
     stages {
+        stage('Setup Docker') {
+            steps {
+                script {
+                    sh 'docker run --rm python:3.8 python --version'
+                }
+            }
+        }
+        
         stage('Clone Repository') {
             steps {
                 sh 'git clone $REPO_URL'
