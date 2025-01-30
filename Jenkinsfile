@@ -1,6 +1,11 @@
 pipeline {
-    agent { docker { image 'python:3.8' } }
-
+    agent {
+        docker {
+            image 'python:3.8'
+            args '--workdir /workspace'
+        }
+    }
+    
     environment {
         REPO_URL = "https://github.com/pranavp0/vuln-scanner.git"
     }
