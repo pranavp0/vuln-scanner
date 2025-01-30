@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        dockerContainer {
             image 'python:3.8'
             args '--workdir /workspace'
         }
