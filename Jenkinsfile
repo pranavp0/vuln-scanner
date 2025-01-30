@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.8'
-            args '--user root'  // Avoid permission issues inside container
+            args '--user root'
         }
     }
     
@@ -15,7 +15,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    sh 'rm -rf vuln-scanner || true'  // Remove existing repo (if any)
+                    sh 'rm -rf vuln-scanner || true'  // Ensure workspace is clean
                     sh "git clone $REPO_URL"
                 }
             }
