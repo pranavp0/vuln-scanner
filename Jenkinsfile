@@ -21,7 +21,7 @@ pipeline {
         
         stage('Clone Repository') {
             steps {
-                sh 'git clone $REPO_URL'
+                sh 'git clone https://github.com/pranavp0/vuln-scanner.git'
             }
         }
 
